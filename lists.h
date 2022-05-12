@@ -36,32 +36,32 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/*funciones1*/
+/*funciones1.c*/
 void f_pint(stack_t **stack, unsigned int line_number);
 void f_pall(stack_t **stack, unsigned int line_number);
 void f_push(stack_t **stack, unsigned int line_number);
 void f_pop(stack_t **stack, unsigned int line_number);
 void f_swap(stack_t **stack, unsigned int line_number);
 
-/*funciones2*/
+/*funciones2.c*/
 void f_add(stack_t **stack, unsigned int line_number);
 void f_nop(stack_t **stack, unsigned int line_number);
 
-/*otras*/
+/*otras.c*/
 int isnum(char *integer);
 void suprtab(char *buffer);
 int lenstack(stack_t **head);
-void freelist(stak_t *head);
+void freelist(stack_t *head);
 int push(instruction_t function, char *integer, stack_t **head, unsigned int lin);
 
-/*execs*/
+/*execs.c*/
 int exec(instruction_t function, char *integer, stack_t **head, unsigned int lin);
 int exe_pall(stack_t **head);
 int exe_pint(stack_t **head, unsigned int lin);
 int exe_pop(stack_t **head, unsigned int lin);
 int exe_swap(stack_t **head, unsigned int lin);
 
-/*exes*/
+/*exes.c*/
 int exe_add(stack_t **head, unsigned int lin); 
 int exe_nop(stack_t **head, unsigned int lin);
 

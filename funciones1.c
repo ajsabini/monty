@@ -52,7 +52,7 @@ void f_pint(stack_t **stack, unsigned int line_number)
  *  Return: void
  */
 
-void f_pall(stack_t ** stack, unsigned int line number)
+void f_pall(stack_t ** stack, unsigned int line_number)
 {
 	stack_t *aux = *stack;
 
@@ -62,4 +62,21 @@ void f_pall(stack_t ** stack, unsigned int line number)
 		printf("%d\n", aux->n);
 		aux = aux->next;
 	}
+}
+
+/**
+ * f_pop - eliminar el elemento de mas arriba de la pila
+ * @stack: primer nodo del stack
+ * @line_number: numero de lineas
+ * Return: void
+ */
+
+void f_pop(stak_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+
+	(void)line_number;
+
+	*stack = (*stack)->next;
+	free(aux);
 }

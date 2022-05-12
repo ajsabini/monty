@@ -1,6 +1,36 @@
 #include "lists.h"
 
 /**
+ * f_push - hacemos un push de un elemento al stack
+ * @stak: primer nodo del stack
+ * @line_number: numero de lineas
+ * Return: void
+ */
+
+void f_push(stack_t **stack, unsigned int line_number)
+{
+	stack_t *new = NULL;
+
+	new = malloc(sizeof(stack_t));
+	if (new == NULL)
+	{
+		write(2, "ERROR: fallo el malloc\n", 22);
+		exit(EXIT_FAILURE);
+	}
+	new->n = line_number;
+	new->next = NULL;
+	new->prev = NULL;
+	if(*stack == NULL)
+		*stack = new;
+	else
+	{
+		(*stack)->prev = new;
+		new->next = *stack;
+		*stack = new;
+	}
+}
+
+/**
  * f_pint - impriome el valor que esta mas arriba en el stak
  * @stak: primer nodo del stak
  * @line_number: numero de lineas

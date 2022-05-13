@@ -17,6 +17,7 @@ void f_add(stack_t **stack, unsigned int line_number)
 	aux = aux->next;
 	add = add + aux->n;
 	f_pop(stack, add);
+	f_pop(stack, add);
 	f_push(stack, add);
 }
 

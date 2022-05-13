@@ -52,7 +52,7 @@ int push(instruction_t function, char *integer, stack_t **head, unsigned int l)
 		sprintf(err, "%d", l);
 		write(2, "L", 1);
 		write(2, err, strlen(err));
-		write(2, ": usage: poush integer\n", 22);
+		write(2, ": usage: push integer\n", 22);
 		return (-1);
 	}
 	num = atoi(integer);

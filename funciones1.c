@@ -14,7 +14,7 @@ void f_push(stack_t **stack, unsigned int line_number)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		write(2, "ERROR: fallo el malloc\n", 22);
+		write(2, "Error malloc failed\n", 22);
 		exit(EXIT_FAILURE);
 	}
 	new->n = line_number;

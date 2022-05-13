@@ -51,6 +51,8 @@ int tokenizador(stack_t **head, char *buffer)
 
 	if (cmd == NULL)
 		return (0);
+	if (cmd == 35)
+		return (0);
 	function.f = get_op_func(cmd);
 	if (function.f == NULL)
 	{
@@ -58,6 +60,7 @@ int tokenizador(stack_t **head, char *buffer)
 		write(2, "L", 1);
 		write(2, err, strlen(err));
 		write(2, ": unknown instruction ", 22);
+		write(2, cmd, strlen(cmd));
 		write(2, "\n", 1);
 		return (-1);
 	}

@@ -20,19 +20,19 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "%s\n", "USAGE: monty file");
 		exit(EXIT_FAILURE);
 	}
-	fo = fopen(arg[1], "rw+");
+	fo = fopen(argv[1], "rw+");
 	if (fo == NULL)
 	{
 		fprintf(stderr, "ERROR: ant open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&buffer, &size, fp) != -1)
+	while (getline(&buffer, &size, fo) != -1)
 	{
 		line++;
 		suprtab(buffer);
 		copia = strdup(buffer);
 		copia[strlen(copia) - 1] = '\0';
-		status = tokenizador(&push, copia);
+		status = tokenizador(&push, copia, line);
 		if (status == -1)
 		{
 			free(copia);
@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 	}
 	if (buffer)
 		free(buffer);
-	freelist(oush);
-	flose(fp);
+	freelist(push);
+	fclose(fo);
 	if (status == -1)
 		exit(EXIT_FAILURE);
 	return (0);

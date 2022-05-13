@@ -65,4 +65,8 @@ int exe_swap(stack_t **head, unsigned int lin);
 int exe_add(stack_t **head, unsigned int lin); 
 int exe_nop(stack_t **head, unsigned int lin);
 
+/*funciones3.c*/
+void (*get_op_func(char *s))(stack_t **, unsigned int);
+int tokenizador(stack_t **head, char *buffer, unsigned int line);
+
 #endif

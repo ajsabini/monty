@@ -80,3 +80,22 @@ void f_pop(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	free(aux);
 }
+
+/**
+ * f_swap - swaps
+ * @stack: primer nodo del stack
+ * @line_number: numero de lineas
+ * Return: void
+ */
+
+void f_swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+	int temp = 0;
+
+	(void)line_number;
+	aux = aux->next;
+	temp = (*stack)->n;
+	(*stack)->n = aux->n;
+	aux->n = temp;
+}

@@ -26,6 +26,8 @@ int exec(instruction_t function, char *integer, stack_t **head, unsigned int l)
 		status = exe_add(head, l);
 	if (function.f == f_nop)
 		status = exe_nop(head, l);
+	if (function.f == f_sub)
+		status = exe_sub(head, l);
 	return (status);
 
 }

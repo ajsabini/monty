@@ -59,3 +59,24 @@ int push(instruction_t function, char *integer, stack_t **head, unsigned int l)
 	function.f(head, num);
 	return (0);
 }
+
+/**
+ *  f_sub - subs a los 2 elem mas arriba del stack
+ *  @stak: primer nodo del stak
+ *  @line_number: numero de lineas
+ *  Return: void
+ */
+
+void f_sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux = *stack;
+	int sub = 0;
+
+	(void)line_number;
+	sub = aux->n;
+	aux = aux->next;
+	sub = aux->n - sub;
+	f_pop(stack, sub);
+	f_pop(stack, sub);
+	f_push(stack, sub);
+}

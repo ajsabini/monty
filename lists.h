@@ -52,7 +52,7 @@ int isnum(char *integer);
 void suprtab(char *buffer);
 int lenstack(stack_t **head);
 void freelist(stack_t *head);
-int push(instruction_t function, char *integer, stack_t **head, unsigned int lin);
+int push(instruction_t function, char *integer, stack_t **head, unsigned int l);
 
 /*execs.c*/
 int exec(instruction_t function, char *integer, stack_t **head, unsigned int lin);
@@ -64,9 +64,5 @@ int exe_swap(stack_t **head, unsigned int lin);
 /*exes.c*/
 int exe_add(stack_t **head, unsigned int lin); 
 int exe_nop(stack_t **head, unsigned int lin);
-
-/*funciones3.c*/
-void (*get_op_func(char *s))(stack_t **, unsigned int);
-int tokenizador(stack_t **head, char *buffer, unsigned int line);
 
 #endif

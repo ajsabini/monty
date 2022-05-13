@@ -32,3 +32,30 @@ void f_nop(stack_t **stack, unsigned int line_number)
 	(void)stack;
 	(void)line_number;
 }
+
+/**
+ * push - ejeuta f_pall
+ * @head: primer noo del stack
+ * @function: puntero a funcion
+ * @integer: stack neuvo
+ * Return: -1 si falla, sino 0
+ */
+
+int push(instruction_t function, char *integer, stack_t **head, unsigned int l)
+{
+	int status = 0, num = 0;
+	char err[20];
+
+	status = isnum(integer);
+	if (status == -1)
+	{
+		sprintf(err, "%d", 1);
+		write(2, "L", 1);
+		write(2, err, strlen(err));
+		write(2, ": usage: poush integer\n", 22);
+		return (-1);
+	}
+	num = atoi(integer);
+	function.f(head, num);
+	return (0);
+}

@@ -1,5 +1,7 @@
 #include "lists.h"
 
+unsigned int line;
+
 /**
  * get_op_func - selecionar la funcion
  * @s: el parametro
@@ -39,7 +41,7 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
  * Return: -1 si falla, sino 0
  */
 
-int tokenizador(stack_t **head, char *buffer, unsigned int line)
+int tokenizador(stack_t **head, char *buffer)
 {
 	char *cmd = NULL;
 	char *integer = NULL, err[20];
@@ -82,7 +84,6 @@ int main(int argc, char *argv[])
 	int status = 0;
 	size_t size = 0;
 	stack_t *push = NULL;
-	unsigned int line;
 
 	if (argc != 2)
 	{
@@ -101,7 +102,7 @@ int main(int argc, char *argv[])
 		suprtab(buffer);
 		copia = strdup(buffer);
 		copia[strlen(copia) - 1] = '\0';
-		status = tokenizador(&push, copia, line);
+		status = tokenizador(&push, copia);
 		if (status == -1)
 		{
 			free(copia);

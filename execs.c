@@ -55,7 +55,7 @@ int exe_pint(stack_t **head, unsigned int lin)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "%d: ant pint, stack empty\n", lin);
+		fprintf(stderr, "L%d: ant pint, stack empty\n", lin);
 		return (-1);
 	}
 	f_pint(head, lin);

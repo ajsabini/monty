@@ -54,3 +54,30 @@ int exe_sub(stack_t **head, unsigned int lin)
 	f_sub(head, lin);
 	return (0);
 }
+
+/**
+ * exe_div - ejecutamos f_div
+ * @head: primer nodo del stack
+ * @lin: numero de lineas
+ * Return: -1 si falla, 0 sino
+ */
+
+int exe_div(stack_t **head, unsigned int lin)
+{
+	int len = 0;
+
+	len = lenstack(head);
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't dic, stack too short\n", lin);
+		return (-1);
+	}
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%d: diision by zero\n", lin);
+		return (-1);
+	}
+	f_div(head, lin);
+	return (0);
+}
+

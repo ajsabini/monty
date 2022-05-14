@@ -81,3 +81,23 @@ int exe_div(stack_t **head, unsigned int lin)
 	return (0);
 }
 
+/**
+ * exe_mul - ejecuta f_mul
+ * @head: primer nodo del stack
+ * @lin: numero de lineas
+ * Return: -1 si falla, sino 0
+ */
+
+int exe_mul(stack_t **head, unsigned int lin)
+{
+	int len = 0;
+
+	len = lenstack(head);
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", lin);
+		return (-1);
+	}
+	f_mul(head, lin);
+	return (0);
+}

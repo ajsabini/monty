@@ -84,7 +84,7 @@ void f_sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * f_div - div los dos elementos de mas arriba del stack
+ * f_div - divde los dos elementos de mas arriba del stack
  * @stack: primer nodo del stack
  * @line_number: numero de lineas
  * Return: void

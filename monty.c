@@ -38,7 +38,6 @@ void (*get_op_func(char *s))(stack_t **, unsigned int)
  * tokenizador - tokeniza
  * @head: primer nodo del stack
  * @buffer: la linea
- * @line: as
  * Return: -1 si falla, sino 0
  */
 

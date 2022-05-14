@@ -79,5 +79,5 @@ void freelist(stack_t *head)
 		aux = head;
 		head = head->next;
 		free(aux);
-	}	
+	}
 }

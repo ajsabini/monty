@@ -36,9 +36,10 @@ void f_nop(stack_t **stack, unsigned int line_number)
 
 /**
  * push - ejeuta f_pall
- * @head: primer noo del stack
  * @function: puntero a funcion
  * @integer: stack neuvo
+ * @head: primer noo del stack
+ * @l: numero de lineas
  * Return: -1 si falla, sino 0
  */
 
@@ -63,7 +64,7 @@ int push(instruction_t function, char *integer, stack_t **head, unsigned int l)
 
 /**
  *  f_sub - subs a los 2 elem mas arriba del stack
- *  @stak: primer nodo del stak
+ *  @stack: primer nodo del stak
  *  @line_number: numero de lineas
  *  Return: void
  */

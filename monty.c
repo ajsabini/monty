@@ -78,8 +78,10 @@ int tokenizador(stack_t **head, char *buffer)
 
 int main(int argc, char *argv[])
 {
-	FILE *fo; char *buffer = NULL, *copia = NULL;
-	int status = 0; size_t size = 0;
+	FILE *fo;
+	char *buffer = NULL, *copia = NULL;
+	int status = 0;
+	size_t size = 0;
 	stack_t *push = NULL;
 
 	if (argc != 2)

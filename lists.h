@@ -16,9 +16,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 
@@ -32,8 +32,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /*funciones1.c*/
@@ -53,17 +53,17 @@ int isnum(char *integer);
 void suprtab(char *buffer);
 int lenstack(stack_t **head);
 void freelist(stack_t *head);
-int push(instruction_t function, char *integer, stack_t **head, unsigned int l);
+int push(instruction_t function, char *intege, stack_t **head, unsigned int l);
 
 /*execs.c*/
-int exec(instruction_t function, char *integer, stack_t **head, unsigned int lin);
+int exec(instruction_t function, char *intege, stack_t **head, unsigned int l);
 int exe_pall(stack_t **head);
 int exe_pint(stack_t **head, unsigned int lin);
 int exe_pop(stack_t **head, unsigned int lin);
 int exe_swap(stack_t **head, unsigned int lin);
 
 /*exes.c*/
-int exe_add(stack_t **head, unsigned int lin); 
+int exe_add(stack_t **head, unsigned int lin);
 int exe_nop(stack_t **head, unsigned int lin);
 int exe_sub(stack_t **head, unsigned int lin);
 

@@ -23,7 +23,7 @@ int exe_add(stack_t **head, unsigned int lin)
 
 /**
  * exe_nop - ejecuta f__nop
- * @head: primer nodo del stack 
+ * @head: primer nodo del stack
  * @lin: numero de lineas
  * Return: -1 si falla, sino 0
  */
